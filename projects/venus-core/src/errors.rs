@@ -1,6 +1,6 @@
 #[derive(Debug, Copy, Clone)]
-pub enum Error {
+pub enum VistaError {
     UnknownError
 }
 
-pub type Result<T> = std::result::Result<T, Error>;
+pub type Result<T> = std::result::Result<T, VistaError>;
