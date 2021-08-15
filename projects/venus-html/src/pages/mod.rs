@@ -2,21 +2,35 @@ use dioxus::prelude::*;
 
 
 
-pub fn ModulePage(cx: Scope) -> Element {
+pub fn SplashPage(cx: Scope) -> Element {
     cx.render(rsx! {
         div {
-            style: "display: flex; flex-direction: column; height: 100%;",
-            Sidebar(cx),
+            Navbar(cx),
             MainBody(cx),
         }
     })
 }
 
 pub fn MainBody(cx: Scope) -> Element {
+    const PLACE_HOLDER: &str = "C6H5COOH + O2 = CO2 + H2O";
+    let text = use_state(&cx, || PLACE_HOLDER.to_string());
     cx.render(rsx! {
         div {
             style: "display: flex; flex-direction: row;",
-            "sidebar"
+            h2 { "This is side bar" }
+        }
+    })
+}
+
+
+// create a component that renders a div with the text "Hello, world!"
+pub fn Navbar(cx: Scope) -> Element {
+    const PLACE_HOLDER: &str = "C6H5COOH + O2 = CO2 + H2O";
+    let text = use_state(&cx, || PLACE_HOLDER.to_string());
+    cx.render(rsx! {
+        header {
+            class: "navbar",
+            h2 { "This is nave bar" }
         }
     })
 }
