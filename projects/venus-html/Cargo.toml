@@ -11,11 +11,11 @@ edition = "2021"
 exclude = ["dist/", "target/", "desktop/", "website/", "tests/"]
 
 [[bin]]
-name = "chemical-web"
+name = "venus-web"
 path = "website/main.rs"
 
 [[bin]]
-name = "chemical-balancer"
+name = "venus-balancer"
 path = "desktop/main.rs"
 
 [dependencies]
@@ -24,9 +24,9 @@ dioxus-desktop = "0.3.0"
 dioxus-web = "0.3.1"
 dioxus-hooks-plus = "0.2.1"
 
-[dependencies.chemical-balancer]
+[dependencies.venus-core]
 version = "*"
-path = "../chemical-balancer"
+path = "../venus-core"
 
 [dev-dependencies]
 image = "0.24.6"
